@@ -1,4 +1,9 @@
+## 👥 Collaborators
 
+- **Visha Hameed** (232201044) – Project Lead & Backend Developer
+- **Hadiqa Ehsan** – Frontend Developer & UI Designer
+
+> Special thanks to Hadiqa Ehsan for contributions to the user interface design and frontend development.
 # 🎯 Metasploit Web UI Controller
 
 <div align="center">
@@ -244,6 +249,7 @@ curl -X POST http://localhost:5000/api/run_command \
 > **IMPORTANT:** This tool is for **educational purposes only**. Only use on systems you own or have explicit permission to test. Unauthorized access to computer systems is illegal. The authors assume no liability for misuse.
 
 ---
+
 
 ## 🤝 Contributing
 
