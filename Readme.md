@@ -2,6 +2,7 @@
 
 - **Visha Hameed** (232201044) – Project Lead & Backend Developer
 - **Hadiqa Ehsan** – Frontend Developer & UI Designer
+  https://github.com/Hadiqa-Ehsan
 
 > Special thanks to Hadiqa Ehsan for contributions to the user interface design and frontend development.
 # 🎯 Metasploit Web UI Controller
