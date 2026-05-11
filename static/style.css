@@ -1,0 +1,352 @@
+/* static/style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    color: #00ff41;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #00ff41;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.msf-icon {
+    font-size: 40px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+.highlight {
+    color: #ff4444;
+    text-shadow: 0 0 5px #ff4444;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background: #0a2a0a;
+    border-radius: 20px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background: #00ff41;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* Main Grid */
+.main-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr 280px;
+    gap: 20px;
+}
+
+/* Panels */
+.panel {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    border: 1px solid #00ff41;
+    overflow: hidden;
+}
+
+.panel-title {
+    background: #00ff41;
+    color: #000;
+    padding: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Exploit Cards */
+.exploit-list {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.exploit-card {
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 12px;
+    transition: all 0.3s;
+}
+
+.exploit-card:hover {
+    border-color: #00ff41;
+    transform: translateX(5px);
+}
+
+.exploit-name {
+    font-weight: bold;
+    color: #00ff41;
+    margin-bottom: 5px;
+}
+
+.exploit-desc {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.btn-use {
+    background: #1a3a1a;
+    color: #00ff41;
+    border: 1px solid #00ff41;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: monospace;
+}
+
+.btn-use:hover {
+    background: #00ff41;
+    color: #000;
+}
+
+/* Quick Commands */
+.quick-commands {
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.quick-btn {
+    background: #1a1a2e;
+    color: #00ff41;
+    border: 1px solid #333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: monospace;
+    transition: all 0.2s;
+}
+
+.quick-btn:hover {
+    background: #00ff41;
+    color: #000;
+    border-color: #00ff41;
+}
+
+/* Custom Command */
+.custom-command {
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.custom-command input {
+    flex: 1;
+    background: #0a0a0a;
+    border: 1px solid #333;
+    color: #00ff41;
+    padding: 10px;
+    font-family: monospace;
+    border-radius: 5px;
+}
+
+.custom-command input:focus {
+    outline: none;
+    border-color: #00ff41;
+}
+
+.custom-command button {
+    background: #1a3a1a;
+    color: #00ff41;
+    border: 1px solid #00ff41;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Exploit Form */
+.exploit-form {
+    padding: 15px;
+    background: #0a0a0a;
+    margin: 10px;
+    border: 1px solid #ff4444;
+    border-radius: 8px;
+}
+
+.exploit-form h3 {
+    color: #ff4444;
+    margin-bottom: 10px;
+}
+
+.exploit-form input {
+    width: 100%;
+    background: #000;
+    border: 1px solid #333;
+    color: #00ff41;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-family: monospace;
+}
+
+.btn-exploit {
+    background: #441111;
+    color: #ff4444;
+    border: 1px solid #ff4444;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.btn-exploit:hover {
+    background: #ff4444;
+    color: #000;
+}
+
+/* Terminal */
+.terminal {
+    margin: 15px;
+    background: #050505;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: #1a1a1a;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.terminal-title {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+}
+
+.clear-btn {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.terminal-body {
+    height: 300px;
+    overflow-y: auto;
+    padding: 12px;
+    font-family: monospace;
+    font-size: 12px;
+    background: #0a0a0a;
+}
+
+.terminal-body .prompt {
+    color: #00ff41;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.terminal-body .info {
+    color: #ffaa00;
+}
+
+.terminal-body .error {
+    color: #ff4444;
+}
+
+.terminal-body .success {
+    color: #00ff41;
+}
+
+/* History */
+.history-list {
+    height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    font-size: 11px;
+}
+
+.history-item {
+    padding: 5px;
+    border-bottom: 1px solid #1a1a1a;
+    cursor: pointer;
+}
+
+.history-item:hover {
+    background: #1a1a1a;
+}
+
+.info-box {
+    padding: 15px;
+    margin: 15px;
+    background: #0a1a0a;
+    border-left: 3px solid #00ff41;
+    font-size: 11px;
+}
+
+.warning {
+    color: #ffaa00;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+    background: #00ff41;
+}

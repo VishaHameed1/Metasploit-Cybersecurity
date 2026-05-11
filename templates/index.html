@@ -1,0 +1,121 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metasploit Web Controller</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <span class="msf-icon">🎯</span>
+                <h1>Metasploit <span class="highlight">Web Controller</span></h1>
+            </div>
+            <div class="status">
+                <span class="status-dot"></span>
+                Connected
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="main-grid">
+            <!-- Left Panel: Exploits -->
+            <div class="panel">
+                <div class="panel-title">
+                    <span>💀</span> Exploit Modules
+                </div>
+                <div class="exploit-list">
+                    {% for key, exploit in exploits.items() %}
+                    <div class="exploit-card" data-exploit="{{ key }}">
+                        <div class="exploit-name">{{ exploit.name }}</div>
+                        <div class="exploit-desc">{{ exploit.description }}</div>
+                        <button class="btn-use" onclick="showExploitForm('{{ key }}')">Use →</button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Center Panel: Command Center -->
+            <div class="panel main-panel">
+                <div class="panel-title">
+                    <span>⚡</span> Command Center
+                </div>
+                
+                <!-- Quick Commands -->
+                <div class="quick-commands">
+                    <button class="quick-btn" onclick="quickCommand('scan_quick', '10.0.2.4')">
+                        🔍 Quick Scan
+                    </button>
+                    <button class="quick-btn" onclick="quickCommand('scan_ports', '10.0.2.4')">
+                        📡 Full Port Scan
+                    </button>
+                    <button class="quick-btn" onclick="quickCommand('show_sessions')">
+                        💻 Show Sessions
+                    </button>
+                    <button class="quick-btn" onclick="quickCommand('show_hosts')">
+                        🖥️ Show Hosts
+                    </button>
+                    <button class="quick-btn" onclick="quickCommand('show_services')">
+                        🔌 Show Services
+                    </button>
+                </div>
+
+                <!-- Custom Command Input -->
+                <div class="custom-command">
+                    <input type="text" id="customCmd" placeholder="Enter custom msfconsole command...">
+                    <button onclick="runCustomCommand()">Run →</button>
+                </div>
+
+                <!-- Exploit Form (Hidden by default) -->
+                <div id="exploitForm" class="exploit-form" style="display:none;">
+                    <h3 id="exploitFormTitle"></h3>
+                    <input type="text" id="targetIP" placeholder="Target IP (e.g., 10.0.2.4)">
+                    <div id="extraOptions"></div>
+                    <button class="btn-exploit" onclick="runExploit()">💣 EXPLOIT</button>
+                    <button onclick="hideExploitForm()">Cancel</button>
+                </div>
+
+                <!-- Output Terminal -->
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">msfconsole output</span>
+                        <button class="clear-btn" onclick="clearOutput()">Clear</button>
+                    </div>
+                    <div id="output" class="terminal-body">
+                        <span class="prompt">msf6 ></span> Welcome to Metasploit Web UI<br>
+                        <span class="prompt">msf6 ></span> Ready for commands<br>
+                        <span class="prompt">msf6 ></span> <span class="info">Use quick commands or exploit modules above</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Info & History -->
+            <div class="panel">
+                <div class="panel-title">
+                    <span>📋</span> Command History
+                </div>
+                <div id="history" class="history-list">
+                    <div class="history-empty">No commands yet</div>
+                </div>
+                
+                <div class="info-box">
+                    <strong>🎯 Lab Setup:</strong><br>
+                    Attacker: Kali (10.0.2.15)<br>
+                    Target: Metasploitable 2 (10.0.2.4)<br>
+                    <span class="warning">⚠️ Isolated lab only</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
